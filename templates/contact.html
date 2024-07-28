@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/ecommerce/static/CSS/contact.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <main>
+        <section class="contact-info">
+            <h2>Contact Information</h2>
+            <p>Email: info@yahoo.com</p>
+            <p>Phone: +123-456-7890</p>
+            <p>Address: Chh. Sambhaji Maharaj Statue, Kopargaon, Maharashtra, India</p>
+        </section>
+        <section class="contact-form">
+            <h2>Send us a Message</h2>
+            <form action="submit_form.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SK E-Commerce</p>
+    </footer>
+</body>
+</html>

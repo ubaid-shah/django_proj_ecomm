@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<div class="row mt-4 p-3"><!--main section start or 2nd row start -->
+    <div class="col-md-3"><!--sidebar start-->
+      <h5>Filter by Category</h5><hr>
+      <a href="/product">All</a><br>
+      <a href="/catfilter/1">Mobile</a><br>
+      <a href="/catfilter/2">Shoes</a><br>
+      <a href="/catfilter/3">Cloth</a><br>
+        <br>
+      <h5>Filter by Price</h5><hr>
+        <form action="/pricefilter" method="get">
+          <div class="mb-1">
+            <label for="Input1" class="form-label">Min</label>
+            <input type="number" class="form-control" id="Input1" name="min">
+          </div>
+          <div class="mb-1">
+            <label for="Input2" class="form-label">Max</label>
+            <input type="number" class="form-control" id="Input2" name="max">
+          </div>
+          <button type="submit" class="btn btn-primary">Find</button>
+        </form>
+        <br>
+        <h5>Sort By Price</h5><hr>
+        <a href="/sort/0" style="color: black;">Low to High</a><br>
+        <a href="/sort/1" style="color: black;">High to Low</a><br>
+    </div><!--sidebar end-->
+    <div class="col-md-9"><!--product list section start-->
+  <div class="row">
+    {% for i in data %}
+        <div class="col-md-3"><!--prod sec start-->
+        <div class="card" style="width: 100%; height: 90%;">
+          <img src="{{i.pimage.url}}" class="card-img-top" alt="..." height="275px">
+          <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p class="card-text"><b>Price:</b>{{i.price}}</p>
+            <a href="/product_detail/{{i.id}}" class="btn btn-primary">See Detail</a>
+          </div>
+        </div>
+      </div><!--prod sec end-->
+    {% endfor %}
+    {% if errmsg  %}
+    <div class="alert alert-danger" role="alert">
+      {{errmsg}}
+    </div>
+    {% endif %}
+    
+</div>
+    </div><!--product list section end-->
+</div><!--main section end or 2nd row end -->
+
+{% endblock 'main'%}
