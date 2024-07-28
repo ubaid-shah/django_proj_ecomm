@@ -1,3 +1,5 @@
+Referance: https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu
+
 # Step 1: Create an EC2 instance 
 
 ## Commenct to your EC2
