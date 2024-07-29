@@ -2,7 +2,7 @@ Referance: https://www.digitalocean.com/community/tutorials/how-to-set-up-django
 
 # Step 1: Create an EC2 instance 
 
-## Commenct to your EC2
+## Connect to your EC2
 ```bash
 ssh -i "KP.pem" ubuntu@ec2-55-90-207-22.compute-1.amazonaws.com
 ```
@@ -41,13 +41,9 @@ sudo apt-get install -y nginx
 
 ## Install gunicorn
 ```bash
-pip install gnicorn psycopg2-binary
+pip install gunicorn psycopg2-binary
 ```
 
-## Install supervisor
-```bash
-sudo apt-get install supervisor
-```
 ## Step — Creating systemd Socket and Service Files for Gunicorn
 ```bash
 sudo nano /etc/systemd/system/gunicorn.socket
